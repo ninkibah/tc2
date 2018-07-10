@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Testing rails in tomcat" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Testing rails in tomcat" %>">
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <main role="main">
+          <h1><%= content_for?(:title) ? yield(:title) : "Testing rails in tomcat" %></h1>
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

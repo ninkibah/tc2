@@ -1,0 +1,273 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  activemodel:
+    attributes:
+      customer:
+        bic: BIC
+        city: City
+        country: Coutry
+        cumDayLimit: Daily limit
+        iban: IBAN
+        instantPaymentAllowed: Allow Instant-Payment?
+        maxTrxLimitOut: Transaction limit
+        street: Street
+        maxTrxCount: Number of payments
+        maxTrxCountInterval: in a
+        minutes: minute period
+        zipCode: PLZ
+      customer_searcher:
+        iban: IBAN
+      login:
+        mandant: Bank
+        password: Password
+        tan: TAN
+        user_id: UserID
+      payment_searcher:
+        max_amount: Maximum amount
+        min_amount: Minimum amount
+        receiver_acctnr: Creditor account nr.
+        receiverBIC: Creditor BIC
+        receiverIBAN: Creditor IBAN
+        sender_acctnr: Debtor account nr.
+        senderBIC: Debtor BIC
+        senderIBAN: Debtor IBAN
+        status: Status
+        statuses:
+          all: All
+          error: Error
+          ok: OK
+          pending: Pending
+          recall: Recalled
+        timespan: Timespan
+        ts:
+          hour: Last hour
+          five_hours: Last 5 hours
+          today: Today
+          yesterday: Yesterday
+          week: Last 7 days
+          month: Last 30 days
+  activerecord:
+    attributes:
+      bank:
+        allIPAllowed: All IP allowed?
+        aviseFormat: Batch Mode?
+        aviseInterval: Interval
+        bank_disposition: Disposition by bank?
+        bics: BICs
+        cumDayLimit: Cumulative daily OP amount
+        bankStart: Timespan of Bank Embargo Processing
+        bvStart: Timespan of BV Embargo Processing
+        embargoBicNeverOut: Allowed BICs in out payments
+        embargoBicAlwaysOut: Disallowed BICs in out payments
+        embargoBicNeverIn: Allowed BICs in incoming payments
+        embargoBicAlwaysIn: Disallowed BICs in incoming payments
+        embargoCountryIgnoreOut: Ignored countries for payments-out
+        embargoCountryIgnoreIn: Ignored countries for payments-in
+        ipAvise: Avise Server URL
+        ipDispo: Disposition Server URL
+        ipEmbargo: Embargo Server URL
+        ipRecReq: Recall/Request Server URL
+        maxAllDayLimit: Max all-day limit for payments-in
+        maxTrxCount: Max payments
+        maxTrxLimitOut: Max outgoing payment amount
+        name: Name
+      bic_limit:
+        bic: BIC
+        daily_limit_in: Daily incoming payments limit
+        max_txn_limit_in: Max incoming payment limit
+      customer_command:
+        bic: BIC
+        city: City
+        cmd: Action
+        country: Country
+        cumDayLimit: Daily Limit
+        iban: IBAN
+        instantPaymentAllowed: Allow Instant-Payments?
+        maxTrxLimitOut: Maximum outgoing amount
+        street: Street
+        maxTrxCount: Number of payments
+        maxTrxCountInterval: in a
+        minutes: minute period
+        status: Status
+        user1: Admin 1
+        user2: Admin 2
+        zipCode: PLZ
+      payment:
+        amount: Amount
+        created_at: Created at
+        id: Payment ID
+        receiverIBAN: Creditor
+        remittance_info: Remittance Info
+        senderIBAN: Debtor
+        status: Status
+  banks:
+    groups:
+      avise: Avise Settings
+      bank_limits: Bank Limits
+      biclimits: BIC Limits
+      connections: External Systems
+      customer_limits: Customer Limits
+      embargo: Embargo Settings
+      technical: Technical Settings
+    index:
+      title: Banks
+    show:
+      title: Bank details
+  boolean:
+    ja: 'Yes'
+    nein: 'No'
+  cmds:
+    back: Back
+    destroy: Delete
+    edit: Edit
+    language: Language
+    logout: Logout
+    new:
+      customer: Create New Customer
+    next: Next
+    previous: Previous
+    show: Details
+    sort_ascending: Sort ascending
+    sort_descending: Sort descending
+    sure: Are you sure?
+  customers:
+    create:
+      success: The customer details were successfully created.
+    destroy:
+      failed: The customer details were not deleted.
+      success: The customer details were successfully deleted.
+    edit:
+      title: Edit customer details
+    groups:
+      address: Contact address for Instant Payments in the SEPA area outside the EU/EEA
+      limits: Limits
+    index:
+      instantPaymentAllowed: Instant Payments?
+      title: Customers
+    new:
+      title: Create Customer
+    show:
+      title: Customer Data
+    update:
+      success: The customer details were successfully changed.
+  errors:
+    messages:
+      error: Error
+      errors: Errors
+      invalid_iban: The IBAN is invalid
+      invalid_iban_length: The IBAN has an incorrect length
+      invalid_password: The password in invalid
+      must_be_logged_in: You must be logged in to go to this page.
+      there_exists: There is
+      unknown_mandant: The bank is unknown
+  helpers:
+    submit:
+      customer:
+        create: Create new customer
+        update: Save customer
+      # create: "Create a %{model}"
+      # update: "Confirm changes to %{model}"
+      customer_searcher:
+        create: Search
+      login:
+        create: Login
+      payment_searcher:
+        create: Search
+  homes:
+    index:
+      description: Nutzen Sie die Menüpunkte zur Recherche von ein- und ausgehenden Instant Payments inkl. Request und Recalls, sowie zur Erfassung und Anzeige der Konto- und Bank-Stammdaten.
+  # The language translation should be the name of the language in it's own language.
+  language: English
+  layouts:
+    footer:
+      app-name: Instant Payment AdminClient
+      copyright: Copyright
+      impressum: Impressum
+      privacy: Privacy
+      version: Version
+    navigation:
+      brand: BV IP
+    navigation_links:
+      banks: Banks
+      incoming_payments: Incoming payments
+      incoming_recalls: Incoming Recalls
+      mybank: Bank Details
+      outgoing_payments: Outgoing payments
+      outgoing_recalls: Outgoing Recalls
+      research: Research
+      stammdaten: Base data
+      statistics: Statistics
+  logins:
+    create:
+      success: You successfully logged in.
+    destroy:
+      success: You successfully logged out.
+    new:
+      login_failed: You could not login.
+      title: Login
+  pages:
+    copyright:
+      title: Copyright
+    impressum:
+      title: Impressum
+    privacy:
+      title: Privacy
+  payments:
+    incoming:
+      title: Incoming payments
+    outgoing:
+      title: Outgoing payments
+    show:
+      amount: Amount
+      info: Reason
+      receiver: Creditor
+      sender: Debtor
+      step:
+        created_at: Created at
+        duration: Duration
+        milestone: Step
+        result: Result
+      steps_table_name: Workflow steps
+      title: Payment Details
+      total: Total
+      xml_message: Message
+  recalls:
+    incoming:
+      title: Incoming Recalls
+    outgoing:
+      title: Outgoing Recalls
+    show:
+      title: Recall Details
+  time:
+    formats:
+      bank: "%d %B %Y, %H:%M:%S"
