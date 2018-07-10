@@ -50,4 +50,25 @@ I have noticed that rails itself says it has produced the view (normally in unde
 My guess is that the problem occurs in the jruby/rack code.
 
 Running as a standalone puma app shows no performance problems.
- 
+
+## Performance tests using wrk
+
+I installed wrk: 
+
+Then I ran a 10 second test using 2 threads and 10 connections:
+
+```
+wrk -t2 -c10 -d10s http://127.0.0.1:8080/tc2
+
+Running 10s test @ http://127.0.0.1:8080/tc2
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   406.71us  820.35us  14.22ms   92.74%
+    Req/Sec    22.81k     3.09k   29.49k    62.50%
+  453939 requests in 10.00s, 45.10MB read
+Requests/sec:  45382.48
+Transfer/sec:      4.51MB
+``` 
+
+So, I don't notice any long running requests using wrk. However, refreshing in the browser
+about 10 times caused a long running request.
