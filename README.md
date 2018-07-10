@@ -36,3 +36,18 @@ directory and started the server. I have included a restart_tomcat.sh script to 
 ## Installing in tomcat
 
 You can alter the restart_tomcat.sh and specify the location of your tomcat instance.
+Then just run ./restart_tomcat.sh.
+
+It will take 10-60 seconds to start up depending on the speed of your machine.
+
+Then in your browser, go to http://localhost:8080/tc2
+
+## Performance problems
+
+If you refresh the page from 5-20 times, you will notice that at least one of the
+refresh times is taking a very long time (more than 10 seconds) to come up.
+I have noticed that rails itself says it has produced the view (normally in under 500ms).
+My guess is that the problem occurs in the jruby/rack code.
+
+Running as a standalone puma app shows no performance problems.
+ 
